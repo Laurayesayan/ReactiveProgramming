@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,11 @@
 		F7AF108323F48EF500E67A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7AF108123F48EF500E67A84 /* Main.storyboard */; };
 		F7AF108523F48EFB00E67A84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7AF108423F48EFB00E67A84 /* Assets.xcassets */; };
 		F7AF108823F48EFB00E67A84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7AF108623F48EFB00E67A84 /* LaunchScreen.storyboard */; };
+		F7AF109023F6A4E300E67A84 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF108F23F6A4E300E67A84 /* SearchViewController.swift */; };
+		F7AF109223F6D75800E67A84 /* LabelButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF109123F6D75800E67A84 /* LabelButtonViewController.swift */; };
+		F7AF109423F9A91A00E67A84 /* TableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF109323F9A91A00E67A84 /* TableViewViewController.swift */; };
+		F7AF109623F9B1FF00E67A84 /* NamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF109523F9B1FF00E67A84 /* NamesTableViewCell.swift */; };
+		F7AF109823F9BC5000E67A84 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF109723F9BC5000E67A84 /* LaunchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		F7AF108423F48EFB00E67A84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7AF108723F48EFB00E67A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7AF108923F48EFB00E67A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7AF108F23F6A4E300E67A84 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F7AF109123F6D75800E67A84 /* LabelButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButtonViewController.swift; sourceTree = "<group>"; };
+		F7AF109323F9A91A00E67A84 /* TableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewController.swift; sourceTree = "<group>"; };
+		F7AF109523F9B1FF00E67A84 /* NamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesTableViewCell.swift; sourceTree = "<group>"; };
+		F7AF109723F9BC5000E67A84 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +66,6 @@
 				ECD6674E3320CDA434C0F78F /* Pods-ReactiveProgramming_2_3.debug.xcconfig */,
 				23FAF8D11A73940C4AA59967 /* Pods-ReactiveProgramming_2_3.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,7 +93,12 @@
 				F7AF107B23F48EF500E67A84 /* AppDelegate.swift */,
 				F7AF107D23F48EF500E67A84 /* SceneDelegate.swift */,
 				F7AF107F23F48EF500E67A84 /* ViewController.swift */,
+				F7AF108F23F6A4E300E67A84 /* SearchViewController.swift */,
 				F7AF108123F48EF500E67A84 /* Main.storyboard */,
+				F7AF109123F6D75800E67A84 /* LabelButtonViewController.swift */,
+				F7AF109323F9A91A00E67A84 /* TableViewViewController.swift */,
+				F7AF109723F9BC5000E67A84 /* LaunchViewController.swift */,
+				F7AF109523F9B1FF00E67A84 /* NamesTableViewCell.swift */,
 				F7AF108423F48EFB00E67A84 /* Assets.xcassets */,
 				F7AF108623F48EFB00E67A84 /* LaunchScreen.storyboard */,
 				F7AF108923F48EFB00E67A84 /* Info.plist */,
@@ -207,9 +221,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7AF109223F6D75800E67A84 /* LabelButtonViewController.swift in Sources */,
 				F7AF108023F48EF500E67A84 /* ViewController.swift in Sources */,
 				F7AF107C23F48EF500E67A84 /* AppDelegate.swift in Sources */,
+				F7AF109023F6A4E300E67A84 /* SearchViewController.swift in Sources */,
+				F7AF109423F9A91A00E67A84 /* TableViewViewController.swift in Sources */,
+				F7AF109623F9B1FF00E67A84 /* NamesTableViewCell.swift in Sources */,
 				F7AF107E23F48EF500E67A84 /* SceneDelegate.swift in Sources */,
+				F7AF109823F9BC5000E67A84 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
