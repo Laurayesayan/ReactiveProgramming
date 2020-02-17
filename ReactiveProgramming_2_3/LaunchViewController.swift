@@ -17,33 +17,29 @@ class LaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let launchText = Property("")
+
         let isFirstButtonTapped = Property(false)
         let isSecondButtonTapped = Property(false)
         
-//        firstButton.reactive.tap.observeNext {
-//            isFirstButtonTapped.value = true
-//            print(isFirstButtonTapped.value)
-//        }
-//
-//        secondButton.reactive.tap.observeNext {
-//            isSecondButtonTapped.value = true
-//            print(isSecondButtonTapped.value)
-//        }
+        firstButton.reactive.tap.observe { _ in
+            isFirstButtonTapped.value = true
+        }
         
-        firstButton.reactive.tap.map{true}.bind(to: isFirstButtonTapped)
+        secondButton.reactive.tap.observe {_ in
+            isSecondButtonTapped.value = true
+        }
         
-        launchText.map{"\($0)"}.bind(to: launchLabel)
+        isFirstButtonTapped.observe { [weak self] _ in
+            if isSecondButtonTapped.value {
+                self!.launchLabel.text = "Ракета запущена"
+            }
+        }
         
-//        if(isFirstButtonTapped && isSecondButtonTapped) {
-//            launchLabel.text = "Ракета запущена"
-//        }
-
-//        combineLatest(emailTextField.reactive.text, passwordTextField.reactive.text) { email, password in
-//            return email!.isValidEmail && password!.isValidPassword
-//        }
-//        .bind(to: sendButton.reactive.isEnabled)
+        isSecondButtonTapped.observe { [weak self] _ in
+            if isFirstButtonTapped.value {
+                self!.launchLabel.text = "Ракета запущена"
+            }
+        }
         
     }
 }
