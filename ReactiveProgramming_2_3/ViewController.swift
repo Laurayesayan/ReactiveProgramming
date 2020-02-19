@@ -7,8 +7,11 @@
 //
 
 import UIKit
-import Bond
+//import Bond
 import ReactiveKit
+import RxCocoa
+import RxSwift
+
 
 class ViewController: UIViewController {
 
@@ -19,26 +22,44 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        infoLabel.isUserInteractionEnabled = true
-        emailTextField.reactive.text
-            .ignoreNils()
+//     // Bond implementation
+//        emailTextField.reactive.text
+//            .ignoreNils()
+//            .filter{$0.count > 5}
+//            .map{$0.isValidEmail ? "" : "Incorrect e-mail"}
+//            .bind(to: infoLabel.reactive.text)
+//
+//        passwordTextField.reactive.text
+//            .ignoreNils()
+//            .filter{$0.count != 0}
+//            .map{$0.isValidPassword ? "" : "Too short password"}
+//            .bind(to: infoLabel.reactive.text)
+//
+//        combineLatest(emailTextField.reactive.text, passwordTextField.reactive.text) { email, password in
+//            return email!.isValidEmail && password!.isValidPassword
+//        }
+//        .bind(to: sendButton.reactive.isEnabled)
+        
+        // RXSwift implementation
+        emailTextField.rx.text.orEmpty.asObservable()
+        .distinctUntilChanged()
             .filter{$0.count > 5}
             .map{$0.isValidEmail ? "" : "Incorrect e-mail"}
-            .bind(to: infoLabel.reactive.text)
+            .takeUntil(self.rx.deallocated)
+            .subscribe(infoLabel.rx.text)
         
-        passwordTextField.reactive.text
-            .ignoreNils()
+        passwordTextField.rx.text.orEmpty.asObservable()
             .filter{$0.count != 0}
             .map{$0.isValidPassword ? "" : "Too short password"}
-            .bind(to: infoLabel.reactive.text)
-        
-        combineLatest(emailTextField.reactive.text, passwordTextField.reactive.text) { email, password in
-            return email!.isValidEmail && password!.isValidPassword
+            .takeUntil(self.rx.deallocated)
+            .subscribe(infoLabel.rx.text)
+    
+        let bindToButton = Observable.combineLatest(emailTextField.rx.text.orEmpty, passwordTextField.rx.text.orEmpty) {
+            ($0.isValidEmail && $1.isValidPassword)
         }
-        .bind(to: sendButton.reactive.isEnabled)
-    
+        .takeUntil(self.rx.deallocated)
+        .bind(to: sendButton.rx.isEnabled)
     }
-    
 }
 
 extension String {

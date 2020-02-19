@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxRelay
+import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
     
@@ -15,12 +18,23 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    // Bond implementation
         searchTextField.reactive.text
             .ignoreNils()
-            .filter{$0.count != 0}
+            .filter{$0.count > 0}
             .debounce(for: 0.5)
             .observeNext { text in
                 print("Отправка запроса для \(text)")
         }
+        
+//      // RXSwift implementation
+//        searchTextField.rx.text.orEmpty.asObservable()
+//            .filter{$0.count > 1}
+//            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+//            .takeUntil(self.rx.deallocated)
+//            .subscribe(onNext: {
+//                text in
+//                print("Отправка запроса для \(text)")
+//            })
     }
 }
