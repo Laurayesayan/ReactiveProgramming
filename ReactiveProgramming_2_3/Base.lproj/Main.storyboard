@@ -140,14 +140,14 @@
                                 </stackView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NamesCell" id="Zbc-d1-HBR" customClass="NamesTableViewCell" customModule="ReactiveProgramming_2_3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="22.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zbc-d1-HBR" id="V7K-zJ-ZPb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="22.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwS-2O-V1y">
-                                                    <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwS-2O-V1y">
+                                                    <rect key="frame" x="20" y="11" width="374" height="0.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -156,7 +156,7 @@
                                             <constraints>
                                                 <constraint firstItem="QwS-2O-V1y" firstAttribute="leading" secondItem="V7K-zJ-ZPb" secondAttribute="leadingMargin" id="3s8-cv-FKl"/>
                                                 <constraint firstItem="QwS-2O-V1y" firstAttribute="top" secondItem="V7K-zJ-ZPb" secondAttribute="topMargin" id="cx5-ql-2g2"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="QwS-2O-V1y" secondAttribute="bottom" constant="0.5" id="dZ9-DD-NPq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QwS-2O-V1y" secondAttribute="bottom" id="dZ9-DD-NPq"/>
                                                 <constraint firstItem="QwS-2O-V1y" firstAttribute="trailing" secondItem="V7K-zJ-ZPb" secondAttribute="trailingMargin" id="uVD-oQ-9se"/>
                                             </constraints>
                                         </tableViewCellContentView>

@@ -54,7 +54,7 @@ class ViewController: UIViewController {
             .takeUntil(self.rx.deallocated)
             .subscribe(infoLabel.rx.text)
     
-        let bindToButton = Observable.combineLatest(emailTextField.rx.text.orEmpty, passwordTextField.rx.text.orEmpty) {
+        Observable.combineLatest(emailTextField.rx.text.orEmpty, passwordTextField.rx.text.orEmpty) {
             ($0.isValidEmail && $1.isValidPassword)
         }
         .takeUntil(self.rx.deallocated)
