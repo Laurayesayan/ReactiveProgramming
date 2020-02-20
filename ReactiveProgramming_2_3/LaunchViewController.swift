@@ -40,6 +40,5 @@ class LaunchViewController: UIViewController {
                 self!.launchLabel.text = "Ракета запущена"
             }
         }
-        
     }
 }
