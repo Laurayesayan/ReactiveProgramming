@@ -36,12 +36,12 @@ class TableViewViewController: UIViewController {
 //        }
 //
 //        addButton.reactive.tap.observeNext {
-//            names.append(randomName())
+//            names.append(randomName()) // Пример утечки памяти
 //        }
 //
 //        removeLastButton.reactive.tap.observeNext {
 //            if !names.isEmpty {
-//                names.removeLast()
+//                names.removeLast() // Пример утечки памяти
 //            }
 //
 //        }
